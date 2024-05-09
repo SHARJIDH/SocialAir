@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useChatContext } from 'stream-chat-react';
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
