@@ -98,18 +98,30 @@ const CreateServerForm = () => {
           }
           required
         />
-        <label className='labelTitle' htmlFor='serverImage'>
-          Image URL
-        </label>
+        <div className="flex items-center">
+          <label className="labelTitle" htmlFor="serverImage">
+            Image URL
+          </label>
+          <button
+            type="button"
+            className="ml-2 px-2 py-1 bg-gray-200 rounded-md hover:bg-gray-300"
+            onClick={() =>
+              setFormData({
+                ...formData,
+                serverImage:
+                  'https://images.unsplash.com/photo-1591154669695-5f2a8d20c089?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              })
+            }
+          >
+            Auto
+          </button>
+        </div>
         <input
-          type='text'
-          id='serverImage'
-          name='serverImage'
+          type="text"
+          id="serverImage"
+          name="serverImage"
           value={formData.serverImage}
-          onChange={(e) =>
-            setFormData({ ...formData, serverImage: e.target.value })
-          }
-          required
+          onChange={(e) => setFormData({ ...formData, serverImage: e.target.value })}
         />
         <h2 className='mb-2 labelTitle'>Add Users</h2>
         <div className='max-h-64 overflow-y-scroll my-4'>
