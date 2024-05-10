@@ -1,4 +1,5 @@
 //@ts-nocheck
+"use client"
 import { useChatContext } from 'stream-chat-react';
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import { useDiscordContext } from '@/contexts/DiscordContext';
 import CreateServerForm from './CreateServerForm';
 import Link from 'next/link';
 import { Channel } from 'stream-chat';
+import myImage from '../../public/images/logo-color.png';
 
 const ServerList = () => {
   const { client } = useChatContext();
@@ -46,13 +48,13 @@ const ServerList = () => {
 
   return (
     <div className='bg-dark-gray h-full flex flex-col items-center'>
-      <button
+      {/* <button
         className={`block p-3 aspect-square sidebar-icon ${activeServer === undefined ? 'selected-icon' : ''
           }`}
         onClick={() => changeServer(undefined, client)}
-      >
-        <div className='rounded-icon '></div>
-      </button>
+      > */}
+      <Image src={myImage} alt="My Image" onClick={() => changeServer(undefined, client)} />
+      {/* </button> */}
       <div className='border-t-2 border-t-gray-300'>
         {serverList.map((server) => {
           return (
