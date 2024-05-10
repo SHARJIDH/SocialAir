@@ -98,13 +98,21 @@ const CreateServerForm = () => {
           }
           required
         />
+        <label className="labelTitle" htmlFor="serverImage">
+          Image URL
+        </label>
         <div className="flex items-center">
-          <label className="labelTitle" htmlFor="serverImage">
-            Image URL
-          </label>
+
+          <input
+            type="text"
+            id="serverImage"
+            name="serverImage"
+            value={formData.serverImage}
+            onChange={(e) => setFormData({ ...formData, serverImage: e.target.value })}
+          />
           <button
             type="button"
-            className="ml-2 px-2 py-1 bg-gray-200 rounded-md hover:bg-gray-300"
+            className="bg-discord rounded p-2 text-white font-bold uppercase ml-2"
             onClick={() =>
               setFormData({
                 ...formData,
@@ -116,13 +124,6 @@ const CreateServerForm = () => {
             Auto
           </button>
         </div>
-        <input
-          type="text"
-          id="serverImage"
-          name="serverImage"
-          value={formData.serverImage}
-          onChange={(e) => setFormData({ ...formData, serverImage: e.target.value })}
-        />
         <h2 className='mb-2 labelTitle'>Add Users</h2>
         <div className='max-h-64 overflow-y-scroll my-4'>
           {users.map((user) => (
