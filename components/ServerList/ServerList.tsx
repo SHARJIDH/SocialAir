@@ -53,7 +53,7 @@ const ServerList = () => {
           }`}
         onClick={() => changeServer(undefined, client)}
       > */}
-      <Image src={myImage} alt="My Image" onClick={() => changeServer(undefined, client)} />
+      <Image src={myImage} alt="My Image" className="rounded-icon" onClick={() => changeServer(undefined, client)} />
       {/* </button> */}
       <div className='border-t-2 border-t-gray-300'>
         {serverList.map((server) => {
